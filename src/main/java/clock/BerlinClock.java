@@ -17,22 +17,26 @@ public class BerlinClock {
         setFiveHourLamps();
         setOneHourLamps();
         setFiveMinuteLamps();
+        setOneMinuteLamps();
     }
 
-    public Integer getNoFiveHourLamps() {
+    private Integer getNoFiveHourLamps() {
         return getHours() / 5;
     }
 
-    public Integer getNoOneHourLamps() {
+    private Integer getNoOneHourLamps() {
         return getHours() % 5;
     }
 
-    public Integer getNoFiveMinuteLamps() {
+    private Integer getNoFiveMinuteLamps() {
         return getMinutes() / 5;
     }
 
+    private Integer getNoOfOneMinuteLamps() {
+        return getMinutes() % 5;
+    }
 
-    public void setLampRow(char[] lamps, Integer noOfOnLamps, char lampColour) {
+    private void setLampRow(char[] lamps, Integer noOfOnLamps, char lampColour) {
         for (int i=0 ; i < noOfOnLamps; i++) {
             // condition to pick out the RED lamps on the 5 minute lamp row
             if (lamps.length == Lamps.NO_FIVE_MIN_LAMPS && (i+1) % 3 == 0) {
@@ -43,16 +47,20 @@ public class BerlinClock {
         }
     }
 
-    public void setFiveHourLamps() {
+    private void setFiveHourLamps() {
         setLampRow(getLamps().getFiveHourLamps(), getNoFiveHourLamps(), Lamps.RED_LAMP);
     }
 
-    public void setOneHourLamps() {
+    private void setOneHourLamps() {
         setLampRow(getLamps().getOneHourLamps(), getNoOneHourLamps(), Lamps.RED_LAMP);
     }
 
-    public void setFiveMinuteLamps() {
+    private void setFiveMinuteLamps() {
         setLampRow(getLamps().getFiveMinuteLamps(), getNoFiveMinuteLamps(), Lamps.YELLOW_LAMP);
+    }
+
+    private void setOneMinuteLamps() {
+        setLampRow(getLamps().getOneMinuteLamps(), getNoOfOneMinuteLamps() ,Lamps.YELLOW_LAMP);
     }
 
     public Integer getHours() {

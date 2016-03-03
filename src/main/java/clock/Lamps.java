@@ -26,7 +26,7 @@ public class Lamps {
     }
 
     public String showOneMinuteLamps() {
-        return String.valueOf(oneMinuteLamps);
+        return String.valueOf(getOneMinuteLamps());
     }
 
     public char[] getFiveHourLamps() {
@@ -51,5 +51,13 @@ public class Lamps {
 
     public void setFiveMinuteLamps(char[] fiveMinuteLamps) {
         this.fiveMinuteLamps = fiveMinuteLamps;
+    }
+
+    public char[] getOneMinuteLamps() {
+        return oneMinuteLamps;
+    }
+
+    public void setOneMinuteLamps(char[] oneMinuteLamps) {
+        this.oneMinuteLamps = oneMinuteLamps;
     }
 }

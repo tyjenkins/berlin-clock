@@ -226,4 +226,11 @@ public class BerlinClockTest {
 
         assertThat(berlinClock.getLamps().showOneMinuteLamps(), is("----"));
     }
+
+    @Test
+    public void clock_Should_DisplayOneOneMinuteLamps_When_TimeHasOneMinute() {
+        BerlinClock berlinClock = new BerlinClock(0,1,0);
+
+        assertThat(berlinClock.getLamps().showOneMinuteLamps(), is("Y---"));
+    }
 }
