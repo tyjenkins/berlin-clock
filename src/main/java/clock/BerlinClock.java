@@ -4,9 +4,6 @@ package clock;
  * Created by tyjenkins on 03/03/2016.
  */
 public class BerlinClock {
-    private static final char RED_LAMP = 'R';
-    private static final char YELLOW_LAMP = 'Y';
-
     private Integer hours;
     private Integer minutes;
     private Integer seconds;
@@ -37,20 +34,25 @@ public class BerlinClock {
 
     public void setLampRow(char[] lamps, Integer noOfOnLamps, char lampColour) {
         for (int i=0 ; i < noOfOnLamps; i++) {
-            lamps[i] = lampColour;
+            // condition to pick out the RED lamps on the 5 minute lamp row
+            if (lamps.length == Lamps.NO_FIVE_MIN_LAMPS && (i+1) % 3 == 0) {
+                lamps[i] = Lamps.RED_LAMP;
+            } else {
+                lamps[i] = lampColour;
+            }
         }
     }
 
     public void setFiveHourLamps() {
-        setLampRow(getLamps().getFiveHourLamps(), getNoFiveHourLamps(), RED_LAMP);
+        setLampRow(getLamps().getFiveHourLamps(), getNoFiveHourLamps(), Lamps.RED_LAMP);
     }
 
     public void setOneHourLamps() {
-        setLampRow(getLamps().getOneHourLamps(), getNoOneHourLamps(), RED_LAMP);
+        setLampRow(getLamps().getOneHourLamps(), getNoOneHourLamps(), Lamps.RED_LAMP);
     }
 
     public void setFiveMinuteLamps() {
-        setLampRow(getLamps().getFiveMinuteLamps(), getNoFiveMinuteLamps(), YELLOW_LAMP);
+        setLampRow(getLamps().getFiveMinuteLamps(), getNoFiveMinuteLamps(), Lamps.YELLOW_LAMP);
     }
 
     public Integer getHours() {

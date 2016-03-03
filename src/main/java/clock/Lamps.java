@@ -4,6 +4,10 @@ package clock;
  * Created by tyjenkins on 03/03/2016.
  */
 public class Lamps {
+    public static final char RED_LAMP = 'R';
+    public static final char YELLOW_LAMP = 'Y';
+    public static final Integer NO_FIVE_MIN_LAMPS = 11;
+
     private char[] fiveHourLamps = {'-','-','-','-'};
     private char[] oneHourLamps = {'-','-','-','-'};
     private char[] fiveMinuteLamps = {'-','-','-','-','-','-','-','-','-','-','-'};
