@@ -219,4 +219,11 @@ public class BerlinClockTest {
 
         assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("YYRYYRYYRYY"));
     }
+
+    @Test
+    public void clock_Should_DisplayNoOneMinuteLamps_When_TimeHasNoMinutes() {
+        BerlinClock berlinClock = new BerlinClock(0,0,0);
+
+        assertThat(berlinClock.getLamps().showOneMinuteLamps(), is("----"));
+    }
 }

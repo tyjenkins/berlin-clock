@@ -11,6 +11,7 @@ public class Lamps {
     private char[] fiveHourLamps = {'-','-','-','-'};
     private char[] oneHourLamps = {'-','-','-','-'};
     private char[] fiveMinuteLamps = {'-','-','-','-','-','-','-','-','-','-','-'};
+    private char[] oneMinuteLamps = {'-','-','-','-'};
 
     public String showFiveHourLamps() {
         return String.valueOf(fiveHourLamps);
@@ -22,6 +23,10 @@ public class Lamps {
 
     public String showFiveMinuteLamps() {
         return String.valueOf(fiveMinuteLamps);
+    }
+
+    public String showOneMinuteLamps() {
+        return String.valueOf(oneMinuteLamps);
     }
 
     public char[] getFiveHourLamps() {
