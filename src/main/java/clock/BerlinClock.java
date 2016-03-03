@@ -18,18 +18,26 @@ public class BerlinClock {
         setOneHourLamps();
     }
 
-    public void setFiveHourLamps() {
-        Integer noFiveHourLamps = getHours() / 5;
-        for (int i=0 ; i < noFiveHourLamps; i++) {
-            getLamps().getFiveHourLamps()[i] = 'R';
+    public Integer getNoFiveHourLamps() {
+        return getHours() / 5;
+    }
+
+    public Integer getNoOneHourLamps() {
+        return getHours() % 5;
+    }
+
+    public void setLampRow(char[] lamps, Integer noOfOnLamps) {
+        for (int i=0 ; i < noOfOnLamps; i++) {
+            lamps[i] = 'R';
         }
     }
 
+    public void setFiveHourLamps() {
+        setLampRow(getLamps().getFiveHourLamps(), getNoFiveHourLamps());
+    }
+
     public void setOneHourLamps() {
-        Integer noOneHourLamps = getHours() % 5;
-        for (int i=0 ; i < noOneHourLamps; i++) {
-            getLamps().getOneHourLamps()[i] = 'R';
-        }
+        setLampRow(getLamps().getOneHourLamps(), getNoOneHourLamps());
     }
 
     public Integer getHours() {
