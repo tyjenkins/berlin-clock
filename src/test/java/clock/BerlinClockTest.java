@@ -18,23 +18,37 @@ public class BerlinClockTest {
     }
 
     @Test
-    public void clock_Should_DisplayNoFiveHourLamps_When_TimeIsFourAm() {
+    public void clock_Should_DisplayNoFiveHourLamps_When_TimeOFourHundredHours() {
         BerlinClock berlinClock = new BerlinClock(4,0,0);
 
         assertThat(berlinClock.getLamps().showFiveHourLamps(), is("----"));
     }
 
     @Test
-    public void clock_Should_DisplayOneFiveHourLamp_When_TimeIsFiveAm() {
+    public void clock_Should_DisplayOneFiveHourLamp_When_TimeIsOFiveHundredHours() {
         BerlinClock berlinClock = new BerlinClock(5,0,0);
 
         assertThat(berlinClock.getLamps().showFiveHourLamps(), is("R---"));
     }
 
     @Test
-    public void clock_Should_DisplayOneFiveHourLamp_When_TimeIsNineAm() {
+    public void clock_Should_DisplayOneFiveHourLamp_When_TimeIsONineHundredHours() {
         BerlinClock berlinClock = new BerlinClock(9,0,0);
 
         assertThat(berlinClock.getLamps().showFiveHourLamps(), is("R---"));
+    }
+
+    @Test
+    public void clock_Should_DisplayTwoFiveHourLamps_When_TimeIsTenHundredHours() {
+        BerlinClock berlinClock = new BerlinClock(10,0,0);
+
+        assertThat(berlinClock.getLamps().showFiveHourLamps(), is("RR--"));
+    }
+
+    @Test
+    public void clock_Should_DisplayOneFiveHourLamp_When_TimeIsFourteenHundredHours() {
+        BerlinClock berlinClock = new BerlinClock(14,0,0);
+
+        assertThat(berlinClock.getLamps().showFiveHourLamps(), is("RR--"));
     }
 }

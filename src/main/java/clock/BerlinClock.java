@@ -18,8 +18,9 @@ public class BerlinClock {
     }
 
     public void setFiveHourLamps() {
-        if (getHours() > 4) {
-            getLamps().getFiveHourLamps()[0] = 'R';
+        Integer noFiveHourLamps = getHours() / 5;
+        for (int i=0 ; i < noFiveHourLamps; i++) {
+            getLamps().getFiveHourLamps()[i] = 'R';
         }
     }
 
