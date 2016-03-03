@@ -15,12 +15,20 @@ public class BerlinClock {
         this.setSeconds(seconds);
 
         setFiveHourLamps();
+        setOneHourLamps();
     }
 
     public void setFiveHourLamps() {
         Integer noFiveHourLamps = getHours() / 5;
         for (int i=0 ; i < noFiveHourLamps; i++) {
             getLamps().getFiveHourLamps()[i] = 'R';
+        }
+    }
+
+    public void setOneHourLamps() {
+        Integer noOneHourLamps = getHours() % 5;
+        for (int i=0 ; i < noOneHourLamps; i++) {
+            getLamps().getOneHourLamps()[i] = 'R';
         }
     }
 

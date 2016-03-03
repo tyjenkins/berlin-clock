@@ -79,4 +79,18 @@ public class BerlinClockTest {
 
         assertThat(berlinClock.getLamps().showFiveHourLamps(), is("RRRR"));
     }
+
+    @Test
+    public void clock_Should_DisplayOneOneHourLamp_When_TimeIsOOneHundredHours() {
+        BerlinClock berlinClock = new BerlinClock(1,0,0);
+
+        assertThat(berlinClock.getLamps().showOneHourLamps(), is("R---"));
+    }
+
+    @Test
+    public void clock_Should_DisplayNoOneHourLamps_When_TimeIsMidnight() {
+        BerlinClock berlinClock = new BerlinClock(0,0,0);
+
+        assertThat(berlinClock.getLamps().showOneHourLamps(), is("----"));
+    }
 }
