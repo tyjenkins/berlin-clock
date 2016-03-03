@@ -228,9 +228,30 @@ public class BerlinClockTest {
     }
 
     @Test
-    public void clock_Should_DisplayOneOneMinuteLamps_When_TimeHasOneMinute() {
+    public void clock_Should_DisplayOneOneMinuteLamp_When_TimeHasOneMinute() {
         BerlinClock berlinClock = new BerlinClock(0,1,0);
 
         assertThat(berlinClock.getLamps().showOneMinuteLamps(), is("Y---"));
+    }
+
+    @Test
+    public void clock_Should_DisplayTwoOneMinuteLamps_When_TimeHasSevenMinutes() {
+        BerlinClock berlinClock = new BerlinClock(0,7,0);
+
+        assertThat(berlinClock.getLamps().showOneMinuteLamps(), is("YY--"));
+    }
+
+    @Test
+    public void clock_Should_DisplayThreeOneMinuteLamps_When_TimeHasThirteenMinutes() {
+        BerlinClock berlinClock = new BerlinClock(0,13,0);
+
+        assertThat(berlinClock.getLamps().showOneMinuteLamps(), is("YYY-"));
+    }
+
+    @Test
+    public void clock_Should_DisplayFourOneMinuteLamps_When_TimeHasNineteenMinutes() {
+        BerlinClock berlinClock = new BerlinClock(0,19,0);
+
+        assertThat(berlinClock.getLamps().showOneMinuteLamps(), is("YYYY"));
     }
 }
