@@ -46,9 +46,23 @@ public class BerlinClockTest {
     }
 
     @Test
-    public void clock_Should_DisplayOneFiveHourLamp_When_TimeIsFourteenHundredHours() {
+    public void clock_Should_DisplayTwoFiveHourLamp_When_TimeIsFourteenHundredHours() {
         BerlinClock berlinClock = new BerlinClock(14,0,0);
 
         assertThat(berlinClock.getLamps().showFiveHourLamps(), is("RR--"));
+    }
+
+    @Test
+    public void clock_Should_DisplayThreeFiveHourLamps_When_TimeIsFifteenHundredHours() {
+        BerlinClock berlinClock = new BerlinClock(15,0,0);
+
+        assertThat(berlinClock.getLamps().showFiveHourLamps(), is("RRR-"));
+    }
+
+    @Test
+    public void clock_Should_DisplayThreeFiveHourLamp_When_TimeIsNineteenHundredHours() {
+        BerlinClock berlinClock = new BerlinClock(19,0,0);
+
+        assertThat(berlinClock.getLamps().showFiveHourLamps(), is("RRR-"));
     }
 }
