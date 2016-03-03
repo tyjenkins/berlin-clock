@@ -13,6 +13,14 @@ public class BerlinClock {
         this.setHours(hours);
         this.setMinutes(minutes);
         this.setSeconds(seconds);
+
+        setFiveHourLamps();
+    }
+
+    public void setFiveHourLamps() {
+        if (getHours() > 4) {
+            getLamps().getFiveHourLamps()[0] = 'R';
+        }
     }
 
     public Integer getHours() {

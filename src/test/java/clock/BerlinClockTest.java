@@ -23,4 +23,18 @@ public class BerlinClockTest {
 
         assertThat(berlinClock.getLamps().showFiveHourLamps(), is("----"));
     }
+
+    @Test
+    public void clock_Should_DisplayOneFiveHourLamp_When_TimeIsFiveAm() {
+        BerlinClock berlinClock = new BerlinClock(5,0,0);
+
+        assertThat(berlinClock.getLamps().showFiveHourLamps(), is("R---"));
+    }
+
+    @Test
+    public void clock_Should_DisplayOneFiveHourLamp_When_TimeIsNineAm() {
+        BerlinClock berlinClock = new BerlinClock(9,0,0);
+
+        assertThat(berlinClock.getLamps().showFiveHourLamps(), is("R---"));
+    }
 }
