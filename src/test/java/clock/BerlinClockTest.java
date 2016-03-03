@@ -121,4 +121,25 @@ public class BerlinClockTest {
 
         assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("-----------"));
     }
+
+    @Test
+    public void clock_Should_DisplayNoFiveMinuteLamps_When_TimeHasOneMinute() {
+        BerlinClock berlinClock = new BerlinClock(12,1,0);
+
+        assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("-----------"));
+    }
+
+    @Test
+    public void clock_Should_DisplayNoFiveMinuteLamps_When_TimeHasFourMinutes() {
+        BerlinClock berlinClock = new BerlinClock(12,4,0);
+
+        assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("-----------"));
+    }
+
+    @Test
+    public void clock_Should_DisplayOneFiveMinuteLamps_When_TimeHasFiveMinutes() {
+        BerlinClock berlinClock = new BerlinClock(12,5,0);
+
+        assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("Y----------"));
+    }
 }
