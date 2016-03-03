@@ -7,7 +7,11 @@ public class Lamps {
     public static final char RED_LAMP = 'R';
     public static final char YELLOW_LAMP = 'Y';
     public static final char OFF = '-';
+
+    public static final Integer NO_FIVE_HOUR_LAMPS = 4;
+    public static final Integer NO_ONE_HOUR_LAMPS = 4;
     public static final Integer NO_FIVE_MIN_LAMPS = 11;
+    public static final Integer NO_ONE_MIN_LAMPS = 4;
 
     private char secondLamp = '-';
     private char[] fiveHourLamps = {'-','-','-','-'};

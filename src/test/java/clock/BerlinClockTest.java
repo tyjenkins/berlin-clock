@@ -282,4 +282,32 @@ public class BerlinClockTest {
 
         assertThat(berlinClock.getLamps().showSecondLamp(), is("-"));
     }
+
+    @Test
+    public void fiveHourLamps_ShouldBeFourLong_When_ClockInstantiated() {
+        BerlinClock berlinClock = new BerlinClock(0,0,0);
+
+        assertThat(berlinClock.getLamps().getFiveHourLamps().length, is(Lamps.NO_FIVE_HOUR_LAMPS));
+    }
+
+    @Test
+    public void oneHourLamps_ShouldBeFourLong_When_ClockInstantiated() {
+        BerlinClock berlinClock = new BerlinClock(0,0,0);
+
+        assertThat(berlinClock.getLamps().getOneHourLamps().length, is(Lamps.NO_ONE_HOUR_LAMPS));
+    }
+
+    @Test
+    public void fiveMinuteLamps_ShouldBeElevenLong_When_ClockInstantiated() {
+        BerlinClock berlinClock = new BerlinClock(0,0,0);
+
+        assertThat(berlinClock.getLamps().getFiveMinuteLamps().length, is(Lamps.NO_FIVE_MIN_LAMPS));
+    }
+
+    @Test
+    public void oneMinuteLamps_ShouldBeFourLong_When_ClockInstantiated() {
+        BerlinClock berlinClock = new BerlinClock(0,0,0);
+
+        assertThat(berlinClock.getLamps().getOneMinuteLamps().length, is(Lamps.NO_ONE_MIN_LAMPS));
+    }
 }
