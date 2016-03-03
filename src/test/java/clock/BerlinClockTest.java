@@ -93,4 +93,25 @@ public class BerlinClockTest {
 
         assertThat(berlinClock.getLamps().showOneHourLamps(), is("----"));
     }
+
+    @Test
+    public void clock_Should_DisplayTwoOneHourLamps_When_TimeIsOSevenHundredHours() {
+        BerlinClock berlinClock = new BerlinClock(7,0,0);
+
+        assertThat(berlinClock.getLamps().showOneHourLamps(), is("RR--"));
+    }
+
+    @Test
+    public void clock_Should_DisplayThreeOneHourLamp_When_TimeIsThirteenHundredHours() {
+        BerlinClock berlinClock = new BerlinClock(13,0,0);
+
+        assertThat(berlinClock.getLamps().showOneHourLamps(), is("RRR-"));
+    }
+
+    @Test
+    public void clock_Should_DisplayFourOneHourLamp_When_TimeIsTwentyFourHundredHours() {
+        BerlinClock berlinClock = new BerlinClock(24,0,0);
+
+        assertThat(berlinClock.getLamps().showOneHourLamps(), is("RRRR"));
+    }
 }
