@@ -6,8 +6,10 @@ package clock;
 public class Lamps {
     public static final char RED_LAMP = 'R';
     public static final char YELLOW_LAMP = 'Y';
+    public static final char OFF = '-';
     public static final Integer NO_FIVE_MIN_LAMPS = 11;
 
+    private char secondLamp = '-';
     private char[] fiveHourLamps = {'-','-','-','-'};
     private char[] oneHourLamps = {'-','-','-','-'};
     private char[] fiveMinuteLamps = {'-','-','-','-','-','-','-','-','-','-','-'};
@@ -27,6 +29,10 @@ public class Lamps {
 
     public String showOneMinuteLamps() {
         return String.valueOf(getOneMinuteLamps());
+    }
+
+    public String showSecondLamp() {
+        return String.valueOf(secondLamp);
     }
 
     public char[] getFiveHourLamps() {
@@ -59,5 +65,13 @@ public class Lamps {
 
     public void setOneMinuteLamps(char[] oneMinuteLamps) {
         this.oneMinuteLamps = oneMinuteLamps;
+    }
+
+    public char getSecondLamp() {
+        return secondLamp;
+    }
+
+    public void setSecondLamp(char secondLamp) {
+        this.secondLamp = secondLamp;
     }
 }

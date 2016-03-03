@@ -18,6 +18,7 @@ public class BerlinClock {
         setOneHourLamps();
         setFiveMinuteLamps();
         setOneMinuteLamps();
+        setSecondsLamp();
     }
 
     private Integer getNoFiveHourLamps() {
@@ -34,6 +35,14 @@ public class BerlinClock {
 
     private Integer getNoOfOneMinuteLamps() {
         return getMinutes() % 5;
+    }
+
+    private void setSecondsLamp() {
+        if (getSeconds() % 2 == 0) {
+            getLamps().setSecondLamp(Lamps.YELLOW_LAMP);
+        } else {
+            getLamps().setSecondLamp(Lamps.OFF);
+        }
     }
 
     private void setLampRow(char[] lamps, Integer noOfOnLamps, char lampColour) {

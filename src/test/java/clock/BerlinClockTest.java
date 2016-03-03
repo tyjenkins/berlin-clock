@@ -254,4 +254,11 @@ public class BerlinClockTest {
 
         assertThat(berlinClock.getLamps().showOneMinuteLamps(), is("YYYY"));
     }
+
+    @Test
+    public void clock_Should_DisplaySecondLamp_When_TimeHasZeroSeconds() {
+        BerlinClock berlinClock = new BerlinClock(0,0,0);
+
+        assertThat(berlinClock.getLamps().showSecondLamp(), is("Y"));
+    }
 }
