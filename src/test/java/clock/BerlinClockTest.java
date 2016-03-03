@@ -163,4 +163,60 @@ public class BerlinClockTest {
 
         assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("YYR--------"));
     }
+
+    @Test
+    public void clock_Should_DisplayFourFiveMinuteLamps_When_TimeHasTwentyOneMinutes() {
+        BerlinClock berlinClock = new BerlinClock(0,21,0);
+
+        assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("YYRY-------"));
+    }
+
+    @Test
+    public void clock_Should_DisplayFiveFiveMinuteLamps_When_TimeHasTwentySevenMinutes() {
+        BerlinClock berlinClock = new BerlinClock(0,27,0);
+
+        assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("YYRYY------"));
+    }
+
+    @Test
+    public void clock_Should_DisplaySixFiveMinuteLamps_When_TimeHasThirtyThreeMinutes() {
+        BerlinClock berlinClock = new BerlinClock(0,33,0);
+
+        assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("YYRYYR-----"));
+    }
+
+    @Test
+    public void clock_Should_DisplaySevenFiveMinuteLamps_When_TimeHasThirtyEightMinutes() {
+        BerlinClock berlinClock = new BerlinClock(0,38,0);
+
+        assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("YYRYYRY----"));
+    }
+
+    @Test
+    public void clock_Should_DisplayEightFiveMinuteLamps_When_TimeHasFortyFourMinutes() {
+        BerlinClock berlinClock = new BerlinClock(0,44,0);
+
+        assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("YYRYYRYY---"));
+    }
+
+    @Test
+    public void clock_Should_DisplayNineFiveMinuteLamps_When_TimeHasFortyFiveMinutes() {
+        BerlinClock berlinClock = new BerlinClock(0,45,0);
+
+        assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("YYRYYRYYR--"));
+    }
+
+    @Test
+    public void clock_Should_DisplayTenFiveMinuteLamps_When_TimeHasFiftyOneMinutes() {
+        BerlinClock berlinClock = new BerlinClock(0,51,0);
+
+        assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("YYRYYRYYRY-"));
+    }
+
+    @Test
+    public void clock_Should_DisplayElevenFiveMinuteLamps_When_TimeHasFiftySevenMinutes() {
+        BerlinClock berlinClock = new BerlinClock(0,57,0);
+
+        assertThat(berlinClock.getLamps().showFiveMinuteLamps(), is("YYRYYRYYRYY"));
+    }
 }
