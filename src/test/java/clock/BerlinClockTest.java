@@ -261,4 +261,25 @@ public class BerlinClockTest {
 
         assertThat(berlinClock.getLamps().showSecondLamp(), is("Y"));
     }
+
+    @Test
+    public void clock_Should_NotDisplaySecondLamp_When_TimeHasOneSecond() {
+        BerlinClock berlinClock = new BerlinClock(0,0,1);
+
+        assertThat(berlinClock.getLamps().showSecondLamp(), is("-"));
+    }
+
+    @Test
+    public void clock_Should_DisplaySecondLamp_When_TimeHasTwoSeconds() {
+        BerlinClock berlinClock = new BerlinClock(0,0,2);
+
+        assertThat(berlinClock.getLamps().showSecondLamp(), is("Y"));
+    }
+
+    @Test
+    public void clock_Should_NotDisplaySecondLamp_When_TimeHasFiftyNineSeconds() {
+        BerlinClock berlinClock = new BerlinClock(0,0,59);
+
+        assertThat(berlinClock.getLamps().showSecondLamp(), is("-"));
+    }
 }
